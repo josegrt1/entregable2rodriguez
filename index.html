@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vuelos y Más – Simulador de viajes</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAVBAR SUPERIOR -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo" class="logo" />
+      <span>Vuelos y Más</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#formulario">Obtener simulación</a></li>
+      <li><a href="#nosotros">Sobre nosotros</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION CON IMAGEN DE FONDO -->
+  <header class="hero" id="formulario">
+    <div class="overlay">
+      <div class="hero-content">
+        <h1>✈️ Planificá tu viaje perfecto</h1>
+        <p>Calculá fácilmente tu presupuesto de viaje y alojamientos</p>
+
+        <form id="formularioViaje" class="formulario-box" novalidate>
+          <div id="mensajes" class="mensajes" aria-live="polite"></div>
+
+          <label for="origen">Origen:</label>
+          <select id="origen" required></select>
+
+          <label for="destino">Destino:</label>
+          <select id="destino" required></select>
+
+          <label for="dias">Cantidad de días:</label>
+          <input type="number" id="dias" min="1" required />
+
+          <label class="chk">
+            <input type="checkbox" id="hotel" />
+            Incluir hotel ($15.000 por día)
+          </label>
+
+          <button type="submit">Calcular viaje</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- RESULTADO Y HISTORIAL -->
+  <main>
+    <section id="resultado" class="resultado-box"></section>
+
+    <section class="historial-box">
+      <h2>📋 Historial de viajes</h2>
+      <ul id="historial"></ul>
+      <button id="borrarHistorial">🗑️ Borrar historial</button>
+      <div id="confirmarBorrado" class="confirm-box hidden" aria-live="polite">
+        <span>¿Seguro que querés borrar el historial?</span>
+        <button id="confirmarSi" class="btn-danger">Sí, borrar</button>
+        <button id="confirmarNo" class="btn-secondary">Cancelar</button>
+      </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="nosotros" class="nosotros-box">
+      <h2>🌍 Sobre nosotros</h2>
+      <p>
+        En <strong>Vuelos y Más</strong> te ayudamos a planificar tu viaje
+        ideal. Calculá tu presupuesto en segundos con nuestro simulador 100% personalizado.
+      </p>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
